@@ -63,7 +63,7 @@ export const Dashboard: React.FC = () => {
       {/* Page Title */}
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-black font-heading text-slate-800 uppercase tracking-wide">
+          <h1 className="text-2xl font-black font-heading text-slate-100 uppercase tracking-wide">
             Dashboard Overview
           </h1>
           <p className="text-xs text-slate-500 mt-1">Real-time leads analytics, scheduling loads, and revenue targets.</p>
@@ -77,51 +77,51 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         
         {/* Total Revenue */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 flex items-center justify-between shadow-xs">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex items-center justify-between shadow-xs">
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Revenue</span>
             <h3 className="text-2xl font-black font-heading text-primary mt-1">${totalRevenue.toLocaleString()}</h3>
-            <p className="text-[9px] text-green-600 font-semibold mt-1 flex items-center gap-0.5">
+            <p className="text-[9px] text-green-400 font-semibold mt-1 flex items-center gap-0.5">
               <TrendingUp className="w-3 h-3" /> +12.4% vs last week
             </p>
           </div>
-          <div className="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-green-900/40 text-green-400 rounded-xl flex items-center justify-center">
             <DollarSign className="w-6 h-6" />
           </div>
         </div>
 
         {/* Active Jobs */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 flex items-center justify-between shadow-xs">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex items-center justify-between shadow-xs">
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Active Pipeline</span>
             <h3 className="text-2xl font-black font-heading text-primary mt-1">{activeLeads.length} Leads</h3>
             <p className="text-[9px] text-slate-400 font-medium mt-1">New or contacted statuses</p>
           </div>
-          <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-blue-900/40 text-blue-400 rounded-xl flex items-center justify-center">
             <Users className="w-6 h-6" />
           </div>
         </div>
 
         {/* Scheduled Appointments */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 flex items-center justify-between shadow-xs">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex items-center justify-between shadow-xs">
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Scheduled Jobs</span>
             <h3 className="text-2xl font-black font-heading text-primary mt-1">{scheduledLeads.length} Booked</h3>
             <p className="text-[9px] text-slate-400 font-medium mt-1">Assigned to technicians</p>
           </div>
-          <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-amber-900/40 text-amber-400 rounded-xl flex items-center justify-center">
             <Calendar className="w-6 h-6" />
           </div>
         </div>
 
         {/* Lead Conversion */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 flex items-center justify-between shadow-xs">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex items-center justify-between shadow-xs">
           <div>
             <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Conversion Rate</span>
             <h3 className="text-2xl font-black font-heading text-primary mt-1">{conversionRate}%</h3>
             <p className="text-[9px] text-slate-400 font-medium mt-1">Completed vs total leads</p>
           </div>
-          <div className="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center">
+          <div className="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center">
             <TrendingUp className="w-6 h-6" />
           </div>
         </div>
@@ -132,8 +132,8 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Revenue Area Chart */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs lg:col-span-2 text-left">
-          <h3 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-4">Revenue Analytics (Last 7 Days)</h3>
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xs lg:col-span-2 text-left">
+          <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wide mb-4">Revenue Analytics (Last 7 Days)</h3>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={revenueData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
@@ -154,8 +154,8 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* Referral Source Pie Chart */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs text-left">
-          <h3 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-4">Leads by Referral Source</h3>
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xs text-left">
+          <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wide mb-4">Leads by Referral Source</h3>
           <div className="h-56 relative flex items-center justify-center">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -184,7 +184,7 @@ export const Dashboard: React.FC = () => {
           </div>
           
           {/* Custom legend */}
-          <div className="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-100 text-[10px] font-semibold text-slate-500">
+          <div className="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-700 text-[10px] font-semibold text-slate-500">
             {pieData.map((entry, index) => (
               <div key={entry.name} className="flex items-center gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: COLORS[index % COLORS.length] }} />
@@ -195,8 +195,8 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* Appliance Breakdown Bar Chart */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs lg:col-span-3 text-left">
-          <h3 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-4">Top Serviced Appliances</h3>
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xs lg:col-span-3 text-left">
+          <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wide mb-4">Top Serviced Appliances</h3>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={barData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
@@ -213,13 +213,13 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {/* Recent Activity / Active Tech Jobs */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs text-left">
-        <h3 className="text-sm font-bold text-slate-700 uppercase tracking-wide mb-4">Recent Bookings Timeline</h3>
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xs text-left">
+        <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wide mb-4">Recent Bookings Timeline</h3>
         
         <div className="overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
-              <tr className="border-b border-slate-200 text-slate-400 uppercase font-extrabold pb-3">
+              <tr className="border-b border-slate-800 text-slate-400 uppercase font-extrabold pb-3">
                 <th className="text-left py-3 font-semibold">Customer</th>
                 <th className="text-left py-3 font-semibold">Appliance</th>
                 <th className="text-left py-3 font-semibold">Location</th>
@@ -228,24 +228,24 @@ export const Dashboard: React.FC = () => {
                 <th className="text-right py-3 font-semibold">Created At</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-slate-600">
+            <tbody className="divide-y divide-slate-800 text-slate-300">
               {leads.slice(0, 5).map(lead => {
                 const assignedTech = technicians.find(t => t.id === lead.assignedTechId);
                 return (
-                  <tr key={lead.id} className="hover:bg-slate-50/50 transition">
+                  <tr key={lead.id} className="hover:bg-slate-800/50/50 transition">
                     <td className="py-3.5">
-                      <p className="font-bold text-slate-800">{lead.name}</p>
+                      <p className="font-bold text-slate-100">{lead.name}</p>
                       <p className="text-[10px] text-slate-400 font-medium">{lead.phone}</p>
                     </td>
-                    <td className="py-3.5 font-semibold text-slate-700">{lead.brand} {lead.applianceType}</td>
+                    <td className="py-3.5 font-semibold text-slate-200">{lead.brand} {lead.applianceType}</td>
                     <td className="py-3.5">{lead.city}, KS</td>
                     <td className="py-3.5 font-medium">{assignedTech ? assignedTech.name : 'Unassigned'}</td>
                     <td className="py-3.5">
                       <span className={`px-2 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wide ${
-                        lead.status === 'New' ? 'bg-blue-50 text-blue-600 border border-blue-100' :
-                        lead.status === 'Scheduled' ? 'bg-amber-50 text-amber-600 border border-amber-100' :
-                        lead.status === 'Completed' ? 'bg-green-50 text-green-600 border border-green-100' :
-                        'bg-slate-100 text-slate-500'
+                        lead.status === 'New' ? 'bg-blue-900/40 text-blue-400 border border-blue-800/50' :
+                        lead.status === 'Scheduled' ? 'bg-amber-900/40 text-amber-400 border border-amber-800/50' :
+                        lead.status === 'Completed' ? 'bg-green-900/40 text-green-400 border border-green-800/50' :
+                        'bg-slate-800/50 text-slate-500'
                       }`}>
                         {lead.status}
                       </span>

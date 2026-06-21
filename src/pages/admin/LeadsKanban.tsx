@@ -211,7 +211,7 @@ export const LeadsKanban: React.FC = () => {
       {/* 1. Header Options */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-black font-heading text-slate-800 uppercase tracking-wide">
+          <h1 className="text-2xl font-black font-heading text-slate-100 uppercase tracking-wide">
             Leads Pipeline
           </h1>
           <p className="text-xs text-slate-500 mt-1">Manage active appliance booking leads through statuses.</p>
@@ -220,21 +220,21 @@ export const LeadsKanban: React.FC = () => {
         <div className="flex gap-2">
           <button 
             onClick={handleExportCSV}
-            className="bg-white border border-slate-200 text-slate-600 hover:text-slate-800 hover:bg-slate-50 text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xs transition flex items-center gap-2 cursor-pointer"
+            className="bg-slate-900 border border-slate-800 text-slate-300 hover:text-slate-100 hover:bg-slate-800/50 text-xs font-semibold px-4 py-2.5 rounded-xl shadow-xs transition flex items-center gap-2 cursor-pointer"
           >
             <Download className="w-4 h-4" /> Export CSV
           </button>
           
-          <div className="flex bg-slate-200/60 p-0.5 rounded-xl border border-slate-200">
+          <div className="flex bg-slate-200/60 p-0.5 rounded-xl border border-slate-800">
             <button 
               onClick={() => setViewMode('kanban')}
-              className={`p-2 rounded-lg cursor-pointer transition ${viewMode === 'kanban' ? 'bg-white text-primary shadow-xs' : 'text-slate-500'}`}
+              className={`p-2 rounded-lg cursor-pointer transition ${viewMode === 'kanban' ? 'bg-slate-900 text-primary shadow-xs' : 'text-slate-500'}`}
             >
               <Grid className="w-4 h-4" />
             </button>
             <button 
               onClick={() => setViewMode('list')}
-              className={`p-2 rounded-lg cursor-pointer transition ${viewMode === 'list' ? 'bg-white text-primary shadow-xs' : 'text-slate-500'}`}
+              className={`p-2 rounded-lg cursor-pointer transition ${viewMode === 'list' ? 'bg-slate-900 text-primary shadow-xs' : 'text-slate-500'}`}
             >
               <List className="w-4 h-4" />
             </button>
@@ -243,12 +243,12 @@ export const LeadsKanban: React.FC = () => {
       </div>
 
       {/* 2. Filters & Searches */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-4 flex flex-col md:flex-row gap-4 items-center shadow-xs text-left">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col md:flex-row gap-4 items-center shadow-xs text-left">
         <div className="relative flex-1 w-full">
           <input
             type="text"
             placeholder="Search leads by name, phone, brand or city..."
-            className="w-full border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
+            className="w-full border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
           />
@@ -257,7 +257,7 @@ export const LeadsKanban: React.FC = () => {
         
         {viewMode === 'list' && (
           <select
-            className="border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-white w-full md:w-44"
+            className="border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-slate-900 w-full md:w-44"
             value={statusFilter}
             onChange={e => setStatusFilter(e.target.value)}
           >
@@ -283,14 +283,14 @@ export const LeadsKanban: React.FC = () => {
                 key={status}
                 onDragOver={handleDragOver}
                 onDrop={(e) => handleDrop(e, status)}
-                className="bg-slate-100/70 border border-slate-200/50 rounded-2xl p-4 min-w-[220px] flex flex-col h-[75vh]"
+                className="bg-slate-800/50/70 border border-slate-800/50 rounded-2xl p-4 min-w-[220px] flex flex-col h-[75vh]"
               >
                 {/* Column Title */}
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-bold font-heading text-slate-700 text-xs uppercase tracking-wide">
+                  <span className="font-bold font-heading text-slate-200 text-xs uppercase tracking-wide">
                     {status}
                   </span>
-                  <span className="bg-slate-200 text-slate-600 text-[10px] font-extrabold px-2 py-0.5 rounded-full">
+                  <span className="bg-slate-200 text-slate-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full">
                     {columnLeads.length}
                   </span>
                 </div>
@@ -308,12 +308,12 @@ export const LeadsKanban: React.FC = () => {
                           setSelectedLead(lead);
                           setAssignedTechId(lead.assignedTechId || '');
                         }}
-                        className="bg-white border border-slate-200 hover:border-primary/20 rounded-xl p-3.5 shadow-xs hover:shadow-sm cursor-pointer select-none transition group text-left relative overflow-hidden"
+                        className="bg-slate-900 border border-slate-800 hover:border-primary/20 rounded-xl p-3.5 shadow-xs hover:shadow-sm cursor-pointer select-none transition group text-left relative overflow-hidden"
                       >
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/20 group-hover:bg-primary" />
-                        <h4 className="font-bold text-slate-800 text-xs truncate uppercase tracking-wide">{lead.name}</h4>
+                        <h4 className="font-bold text-slate-100 text-xs truncate uppercase tracking-wide">{lead.name}</h4>
                         
-                        <p className="text-[10px] text-slate-600 font-semibold mt-1 truncate">
+                        <p className="text-[10px] text-slate-300 font-semibold mt-1 truncate">
                           {lead.brand} {lead.applianceType}
                         </p>
                         
@@ -323,7 +323,7 @@ export const LeadsKanban: React.FC = () => {
                         </div>
 
                         {tech && (
-                          <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center gap-1.5 text-[9px] text-slate-500 font-bold uppercase tracking-wider">
+                          <div className="mt-3 pt-2.5 border-t border-slate-700 flex items-center gap-1.5 text-[9px] text-slate-500 font-bold uppercase tracking-wider">
                             <User className="w-3 h-3 text-accent" />
                             <span>{tech.name}</span>
                           </div>
@@ -340,11 +340,11 @@ export const LeadsKanban: React.FC = () => {
       ) : (
 
         // LIST VIEW
-        <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs text-left">
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xs text-left">
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50 text-slate-400 font-extrabold uppercase py-3">
+                <tr className="border-b border-slate-800 bg-slate-800/50 text-slate-400 font-extrabold uppercase py-3">
                   <th className="py-3 px-6 text-left">Customer</th>
                   <th className="py-3 px-6 text-left">Appliance / Problem</th>
                   <th className="py-3 px-6 text-left">Location</th>
@@ -354,31 +354,31 @@ export const LeadsKanban: React.FC = () => {
                   <th className="py-3 px-6 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-slate-600">
+              <tbody className="divide-y divide-slate-800 text-slate-300">
                 {filteredLeads.map(lead => {
                   const tech = technicians.find(t => t.id === lead.assignedTechId);
                   return (
-                    <tr key={lead.id} className="hover:bg-slate-50/50 transition">
+                    <tr key={lead.id} className="hover:bg-slate-800/50/50 transition">
                       <td className="py-3 px-6">
-                        <p className="font-bold text-slate-800">{lead.name}</p>
+                        <p className="font-bold text-slate-100">{lead.name}</p>
                         <p className="text-[10px] text-slate-400">{lead.phone} &bull; {lead.email}</p>
                       </td>
                       <td className="py-3 px-6">
-                        <p className="font-bold text-slate-700 uppercase">{lead.brand} {lead.applianceType}</p>
+                        <p className="font-bold text-slate-200 uppercase">{lead.brand} {lead.applianceType}</p>
                         <p className="text-[10px] text-slate-400 truncate max-w-xs">{lead.problemDescription}</p>
                       </td>
                       <td className="py-3 px-6">{lead.address}, {lead.city}</td>
                       <td className="py-3 px-6">
-                        <p className="font-semibold text-slate-700">{lead.preferredDate}</p>
+                        <p className="font-semibold text-slate-200">{lead.preferredDate}</p>
                         <p className="text-[10px] text-slate-400">{lead.preferredTime}</p>
                       </td>
                       <td className="py-3 px-6 font-medium">{tech ? tech.name : 'Unassigned'}</td>
                       <td className="py-3 px-6">
                         <span className={`px-2 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wide ${
-                          lead.status === 'New' ? 'bg-blue-50 text-blue-600 border border-blue-100' :
-                          lead.status === 'Scheduled' ? 'bg-amber-50 text-amber-600 border border-amber-100' :
-                          lead.status === 'Completed' ? 'bg-green-50 text-green-600 border border-green-100' :
-                          'bg-slate-100 text-slate-500'
+                          lead.status === 'New' ? 'bg-blue-900/40 text-blue-400 border border-blue-800/50' :
+                          lead.status === 'Scheduled' ? 'bg-amber-900/40 text-amber-400 border border-amber-800/50' :
+                          lead.status === 'Completed' ? 'bg-green-900/40 text-green-400 border border-green-800/50' :
+                          'bg-slate-800/50 text-slate-500'
                         }`}>
                           {lead.status}
                         </span>
@@ -411,15 +411,15 @@ export const LeadsKanban: React.FC = () => {
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs" onClick={() => setSelectedLead(null)} />
           
           {/* Drawer Body */}
-          <div className="relative w-full max-w-xl bg-white h-screen shadow-2xl flex flex-col justify-between z-10 overflow-hidden animate-in slide-in-from-right duration-200">
+          <div className="relative w-full max-w-xl bg-slate-900 h-screen shadow-2xl flex flex-col justify-between z-10 overflow-hidden animate-in slide-in-from-right duration-200">
             
             {/* Drawer Header */}
-            <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+            <div className="p-6 border-b border-slate-700 flex justify-between items-center bg-slate-800/50">
               <div>
                 <span className="text-[9px] font-extrabold uppercase bg-primary/10 text-primary px-2.5 py-0.5 rounded-md tracking-wider">
                   Lead File: {selectedLead.id}
                 </span>
-                <h3 className="text-xl font-bold font-heading text-slate-800 uppercase tracking-wide mt-1">
+                <h3 className="text-xl font-bold font-heading text-slate-100 uppercase tracking-wide mt-1">
                   {selectedLead.name}
                 </h3>
               </div>
@@ -428,7 +428,7 @@ export const LeadsKanban: React.FC = () => {
                   setSelectedLead(null);
                   setShowInvoiceForm(false);
                 }} 
-                className="text-slate-400 hover:text-slate-600 p-1 bg-white border border-slate-200 rounded-lg hover:shadow-xs transition"
+                className="text-slate-400 hover:text-slate-300 p-1 bg-slate-900 border border-slate-800 rounded-lg hover:shadow-xs transition"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -445,28 +445,28 @@ export const LeadsKanban: React.FC = () => {
                 </div>
                 <div>
                   <span className="block font-bold text-slate-400 uppercase tracking-wider text-[10px] mb-1">Email Address</span>
-                  <a href={`mailto:${selectedLead.email}`} className="font-semibold text-slate-700">{selectedLead.email}</a>
+                  <a href={`mailto:${selectedLead.email}`} className="font-semibold text-slate-200">{selectedLead.email}</a>
                 </div>
                 <div className="col-span-2">
                   <span className="block font-bold text-slate-400 uppercase tracking-wider text-[10px] mb-1">Service Address</span>
-                  <p className="font-semibold text-slate-700">{selectedLead.address}, {selectedLead.city}, KS {selectedLead.zip}</p>
+                  <p className="font-semibold text-slate-200">{selectedLead.address}, {selectedLead.city}, KS {selectedLead.zip}</p>
                 </div>
                 <div>
                   <span className="block font-bold text-slate-400 uppercase tracking-wider text-[10px] mb-1">Appliance Details</span>
-                  <p className="font-bold text-slate-800 uppercase text-xs">{selectedLead.brand} {selectedLead.applianceType}</p>
+                  <p className="font-bold text-slate-100 uppercase text-xs">{selectedLead.brand} {selectedLead.applianceType}</p>
                   <p className="text-[10px] text-slate-400">Model: {selectedLead.model}</p>
                 </div>
                 <div>
                   <span className="block font-bold text-slate-400 uppercase tracking-wider text-[10px] mb-1">Preferred Slot</span>
-                  <p className="font-semibold text-slate-700">{selectedLead.preferredDate}</p>
+                  <p className="font-semibold text-slate-200">{selectedLead.preferredDate}</p>
                   <p className="text-[10px] text-slate-500">{selectedLead.preferredTime}</p>
                 </div>
               </div>
 
               {/* Problem Description */}
-              <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4">
+              <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-4">
                 <span className="block font-bold text-slate-400 uppercase tracking-wider text-[10px] mb-1.5">Problem Description</span>
-                <p className="text-xs text-slate-700 leading-relaxed">{selectedLead.problemDescription}</p>
+                <p className="text-xs text-slate-200 leading-relaxed">{selectedLead.problemDescription}</p>
               </div>
 
               {/* Uploaded Photo Preview if exists */}
@@ -476,17 +476,17 @@ export const LeadsKanban: React.FC = () => {
                   <img 
                     src={selectedLead.photoUrl} 
                     alt="Appliance Attachment" 
-                    className="w-40 h-40 object-cover rounded-xl border border-slate-200"
+                    className="w-40 h-40 object-cover rounded-xl border border-slate-800"
                   />
                 </div>
               )}
 
               {/* Technician Scheduling Assignment */}
-              <div className="border-t border-slate-100 pt-6">
-                <h4 className="font-bold text-slate-700 uppercase font-heading text-xs tracking-wider mb-3">Assign Dispatch Technician</h4>
+              <div className="border-t border-slate-700 pt-6">
+                <h4 className="font-bold text-slate-200 uppercase font-heading text-xs tracking-wider mb-3">Assign Dispatch Technician</h4>
                 <div className="flex gap-3">
                   <select
-                    className="border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-white flex-1"
+                    className="border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-slate-900 flex-1"
                     value={assignedTechId}
                     onChange={e => {
                       setAssignedTechId(e.target.value);
@@ -501,7 +501,7 @@ export const LeadsKanban: React.FC = () => {
                   
                   <button 
                     onClick={handlePrintWorkOrder}
-                    className="bg-white border border-slate-200 text-slate-600 hover:text-slate-800 hover:bg-slate-50 p-2.5 rounded-xl transition shadow-xs cursor-pointer flex items-center gap-1 text-xs"
+                    className="bg-slate-900 border border-slate-800 text-slate-300 hover:text-slate-100 hover:bg-slate-800/50 p-2.5 rounded-xl transition shadow-xs cursor-pointer flex items-center gap-1 text-xs"
                     title="Print work order receipt"
                   >
                     <Printer className="w-4 h-4" /> Print Order
@@ -511,7 +511,7 @@ export const LeadsKanban: React.FC = () => {
 
               {/* Invoice Generation Trigger */}
               {!showInvoiceForm && (selectedLead.status === 'Scheduled' || selectedLead.status === 'Completed') && (
-                <div className="border-t border-slate-100 pt-6">
+                <div className="border-t border-slate-700 pt-6">
                   <button
                     onClick={() => setShowInvoiceForm(true)}
                     className="w-full bg-accent hover:bg-accent-dark text-white font-heading text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
@@ -523,10 +523,10 @@ export const LeadsKanban: React.FC = () => {
 
               {/* Invoicing Form Panel */}
               {showInvoiceForm && (
-                <form onSubmit={handleCreateInvoice} className="border-t border-slate-100 pt-6 space-y-4 bg-slate-50/50 p-4 rounded-2xl border">
+                <form onSubmit={handleCreateInvoice} className="border-t border-slate-700 pt-6 space-y-4 bg-slate-800/50/50 p-4 rounded-2xl border">
                   <div className="flex justify-between items-center mb-2">
-                    <h4 className="font-bold text-slate-700 uppercase font-heading text-xs tracking-wider">Create Invoice</h4>
-                    <button type="button" onClick={() => setShowInvoiceForm(false)} className="text-slate-400 hover:text-slate-600"><X className="w-4 h-4" /></button>
+                    <h4 className="font-bold text-slate-200 uppercase font-heading text-xs tracking-wider">Create Invoice</h4>
+                    <button type="button" onClick={() => setShowInvoiceForm(false)} className="text-slate-400 hover:text-slate-300"><X className="w-4 h-4" /></button>
                   </div>
                   
                   {invoiceItems.map((item, idx) => (
@@ -535,7 +535,7 @@ export const LeadsKanban: React.FC = () => {
                         type="text"
                         required
                         placeholder="Service item description"
-                        className="flex-1 border border-slate-200 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                        className="flex-1 border border-slate-800 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-primary bg-slate-900"
                         value={item.description}
                         onChange={e => handleInvoiceItemChange(idx, 'description', e.target.value)}
                       />
@@ -543,7 +543,7 @@ export const LeadsKanban: React.FC = () => {
                         type="number"
                         required
                         placeholder="Amount"
-                        className="w-20 border border-slate-200 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                        className="w-20 border border-slate-800 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-primary bg-slate-900"
                         value={item.amount || ''}
                         onChange={e => handleInvoiceItemChange(idx, 'amount', e.target.value)}
                       />
@@ -563,7 +563,7 @@ export const LeadsKanban: React.FC = () => {
                     <input
                       type="number"
                       placeholder="e.g. 25"
-                      className="w-24 border border-slate-200 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                      className="w-24 border border-slate-800 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-primary bg-slate-900"
                       value={discount || ''}
                       onChange={e => setDiscount(parseFloat(e.target.value) || 0)}
                     />
@@ -579,19 +579,19 @@ export const LeadsKanban: React.FC = () => {
               )}
 
               {/* Lead Action History Logs */}
-              <div className="border-t border-slate-100 pt-6">
-                <h4 className="font-bold text-slate-700 uppercase font-heading text-xs tracking-wider mb-3">Communication &amp; Audit Logs</h4>
+              <div className="border-t border-slate-700 pt-6">
+                <h4 className="font-bold text-slate-200 uppercase font-heading text-xs tracking-wider mb-3">Communication &amp; Audit Logs</h4>
                 
                 {/* Notes List */}
                 <div className="space-y-2 mb-4 max-h-40 overflow-y-auto no-scrollbar">
                   {selectedLead.notes.length > 0 ? (
                     selectedLead.notes.map(note => (
-                      <div key={note.id} className="bg-slate-50 rounded-xl p-3 border border-slate-100 text-[11px]">
+                      <div key={note.id} className="bg-slate-800/50 rounded-xl p-3 border border-slate-700 text-[11px]">
                         <div className="flex justify-between items-center text-slate-400 font-semibold mb-1">
                           <span>{note.author}</span>
                           <span>{new Date(note.date).toLocaleString([], {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'})}</span>
                         </div>
-                        <p className="text-slate-600 leading-normal">{note.text}</p>
+                        <p className="text-slate-300 leading-normal">{note.text}</p>
                       </div>
                     ))
                   ) : (
@@ -605,7 +605,7 @@ export const LeadsKanban: React.FC = () => {
                     type="text"
                     required
                     placeholder="Log a client phone contact, parts ordered..."
-                    className="flex-1 border border-slate-200 rounded-xl px-4 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
+                    className="flex-1 border border-slate-800 rounded-xl px-4 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
                     value={noteText}
                     onChange={e => setNoteText(e.target.value)}
                   />
@@ -621,7 +621,7 @@ export const LeadsKanban: React.FC = () => {
             </div>
 
             {/* Drawer Footer Actions */}
-            <div className="p-6 border-t border-slate-100 bg-slate-50 flex gap-3">
+            <div className="p-6 border-t border-slate-700 bg-slate-800/50 flex gap-3">
               <button
                 onClick={() => {
                   updateLeadStatus(selectedLead.id, 'Won');
@@ -638,7 +638,7 @@ export const LeadsKanban: React.FC = () => {
                   setSelectedLead(null);
                 }}
                 disabled={selectedLead.status === 'Lost'}
-                className="flex-1 bg-slate-200 hover:bg-slate-300 disabled:opacity-50 text-slate-700 font-heading text-xs font-bold uppercase tracking-wider py-2.5 rounded-xl shadow-xs transition cursor-pointer"
+                className="flex-1 bg-slate-200 hover:bg-slate-300 disabled:opacity-50 text-slate-200 font-heading text-xs font-bold uppercase tracking-wider py-2.5 rounded-xl shadow-xs transition cursor-pointer"
               >
                 Mark Lost
               </button>

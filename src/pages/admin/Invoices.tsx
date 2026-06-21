@@ -104,19 +104,19 @@ export const Invoices: React.FC = () => {
       
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-black font-heading text-slate-800 uppercase tracking-wide">
+        <h1 className="text-2xl font-black font-heading text-slate-100 uppercase tracking-wide">
           Invoices Manager
         </h1>
         <p className="text-xs text-slate-500 mt-1">Search, print, and track payments of client work order invoices.</p>
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-4 flex flex-col md:flex-row gap-4 items-center shadow-xs">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col md:flex-row gap-4 items-center shadow-xs">
         <div className="relative flex-1 w-full">
           <input
             type="text"
             placeholder="Search invoice number or customer name..."
-            className="w-full border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
+            className="w-full border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
           />
@@ -124,7 +124,7 @@ export const Invoices: React.FC = () => {
         </div>
         
         <select
-          className="border border-slate-200 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-white w-full md:w-44"
+          className="border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition bg-slate-900 w-full md:w-44"
           value={statusFilter}
           onChange={e => setStatusFilter(e.target.value)}
         >
@@ -137,11 +137,11 @@ export const Invoices: React.FC = () => {
       </div>
 
       {/* Invoices List Table */}
-      <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-slate-400 font-extrabold uppercase py-3">
+              <tr className="border-b border-slate-800 bg-slate-800/50 text-slate-400 font-extrabold uppercase py-3">
                 <th className="py-3 px-6 text-left">Invoice ID</th>
                 <th className="py-3 px-6 text-left">Customer</th>
                 <th className="py-3 px-6 text-left">Date Created</th>
@@ -151,21 +151,21 @@ export const Invoices: React.FC = () => {
                 <th className="py-3 px-6 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-slate-600">
+            <tbody className="divide-y divide-slate-800 text-slate-300">
               {filteredInvoices.map(inv => {
                 const lead = leads.find(l => l.id === inv.leadId);
                 return (
-                  <tr key={inv.id} className="hover:bg-slate-50/50 transition">
-                    <td className="py-3.5 px-6 font-bold text-slate-800">{inv.id}</td>
+                  <tr key={inv.id} className="hover:bg-slate-800/50/50 transition">
+                    <td className="py-3.5 px-6 font-bold text-slate-100">{inv.id}</td>
                     <td className="py-3.5 px-6 font-semibold">{lead ? lead.name : 'Unknown Customer'}</td>
                     <td className="py-3.5 px-6">{new Date(inv.createdAt).toLocaleDateString()}</td>
                     <td className="py-3.5 px-6">{new Date(inv.dueDate).toLocaleDateString()}</td>
                     <td className="py-3.5 px-6 font-bold text-primary">${inv.total.toFixed(2)}</td>
                     <td className="py-3.5 px-6">
                       <span className={`px-2.5 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wide ${
-                        inv.status === 'Paid' ? 'bg-green-50 text-green-600 border border-green-100' :
-                        inv.status === 'Sent' ? 'bg-amber-50 text-amber-600 border border-amber-100' :
-                        'bg-slate-100 text-slate-500'
+                        inv.status === 'Paid' ? 'bg-green-900/40 text-green-400 border border-green-800/50' :
+                        inv.status === 'Sent' ? 'bg-amber-900/40 text-amber-400 border border-amber-800/50' :
+                        'bg-slate-800/50 text-slate-500'
                       }`}>
                         {inv.status}
                       </span>
@@ -174,7 +174,7 @@ export const Invoices: React.FC = () => {
                       {inv.status === 'Sent' && (
                         <button
                           onClick={() => updateInvoiceStatus(inv.id, 'Paid')}
-                          className="bg-green-50 hover:bg-green-100 text-green-600 border border-green-200 font-bold px-2 py-1 rounded-lg text-[9px] uppercase transition cursor-pointer"
+                          className="bg-green-900/40 hover:bg-green-100 text-green-400 border border-green-200 font-bold px-2 py-1 rounded-lg text-[9px] uppercase transition cursor-pointer"
                         >
                           Mark Paid
                         </button>

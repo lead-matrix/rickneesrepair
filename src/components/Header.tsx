@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ onBookClick }) => {
             <img 
               src="/logo.png" 
               alt="Rick Nees Appliance Repair" 
-              className="h-12 md:h-14 w-auto object-contain drop-shadow-lg"
+              className="h-12 md:h-14 w-auto object-contain drop-shadow-lg bg-white rounded-xl p-1.5"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
           </Link>

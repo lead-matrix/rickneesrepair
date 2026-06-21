@@ -30,6 +30,7 @@ import CalendarView from './pages/admin/CalendarView';
 import Technicians from './pages/admin/Technicians';
 import Invoices from './pages/admin/Invoices';
 import Settings from './pages/admin/Settings';
+import AdminReviews from './pages/admin/AdminReviews';
 
 // ─── Protected Route Guard ───────────────────────────────────────
 // When Supabase is configured: require auth session
@@ -127,6 +128,7 @@ const AppContent: React.FC = () => {
             <Route path="calendar" element={<CalendarView />} />
             <Route path="technicians" element={<Technicians />} />
             <Route path="invoices" element={<Invoices />} />
+            <Route path="reviews" element={<AdminReviews />} />
             <Route path="settings" element={<Settings />} />
           </Route>
         </Routes>

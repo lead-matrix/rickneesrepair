@@ -87,6 +87,7 @@ interface LeadDataContextType {
   updateInvoiceStatus: (invoiceId: string, status: Invoice['status']) => Promise<void>;
   markNotificationsAsRead: () => Promise<void>;
   saveTemplates: (templates: { email: string; sms: string; review: string }) => Promise<void>;
+  addTechnician: (techInput: Omit<Technician, 'id' | 'rating'>) => Promise<void>;
 }
 
 const LeadDataContext = createContext<LeadDataContextType | undefined>(undefined);
@@ -604,6 +605,39 @@ export const LeadDataProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   };
 
+  const addTechnician = async (techInput: Omit<Technician, 'id' | 'rating'>) => {
+    const newTech: Technician = {
+      ...techInput,
+      id: `tech-${Date.now()}`,
+      rating: 5.0
+    };
+
+    if (supabase) {
+      const { data, error } = await supabase
+        .from('technicians')
+        .insert([{
+          name: techInput.name,
+          phone: techInput.phone,
+          email: techInput.email,
+          specialties: techInput.specialties,
+          status: techInput.status,
+          rating: 5.0
+        }])
+        .select()
+        .single();
+      
+      if (!error && data) {
+        newTech.id = data.id;
+      }
+    }
+
+    const updatedTechs = [...technicians, newTech];
+    setTechnicians(updatedTechs);
+    if (!supabase) {
+      localStorage.setItem('ricknees_techs', JSON.stringify(updatedTechs));
+    }
+  };
+
   const saveTemplates = async (newTemplates: typeof defaultTemplates) => {
     if (supabase) {
       await supabase.from('settings').upsert({ key: 'templates', value: newTemplates });
@@ -629,7 +663,8 @@ export const LeadDataProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       addInvoice,
       updateInvoiceStatus,
       markNotificationsAsRead,
-      saveTemplates
+      saveTemplates,
+      addTechnician
     }}>
       {children}
     </LeadDataContext.Provider>

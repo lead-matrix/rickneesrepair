@@ -3,7 +3,7 @@ import { Link, useLocation, Outlet } from 'react-router-dom';
 import { useLeadData } from '../../context/LeadDataContext';
 import { 
   LayoutDashboard, Kanban, Calendar, Users, FileText, Settings, 
-  Bell, LogOut, Menu, X, ShieldAlert
+  Bell, LogOut, Menu, X, ShieldAlert, Star
 } from 'lucide-react';
 
 export const AdminLayout: React.FC = () => {
@@ -20,6 +20,7 @@ export const AdminLayout: React.FC = () => {
     { name: 'Scheduling Calendar', path: '/admin/calendar', icon: Calendar },
     { name: 'Technicians', path: '/admin/technicians', icon: Users },
     { name: 'Invoices', path: '/admin/invoices', icon: FileText },
+    { name: 'Reviews', path: '/admin/reviews', icon: Star },
     { name: 'Settings', path: '/admin/settings', icon: Settings }
   ];
 
@@ -31,7 +32,7 @@ export const AdminLayout: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-slate-100 font-sans text-left">
+    <div className="flex h-screen bg-slate-950 font-sans text-left text-slate-200">
       
       {/* Sidebar Navigation */}
       <aside 
@@ -94,15 +95,15 @@ export const AdminLayout: React.FC = () => {
       <div className="flex-1 flex flex-col overflow-hidden">
         
         {/* Top Navbar */}
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-20">
+        <header className="h-16 bg-slate-900 border-b border-slate-800 flex items-center justify-between px-6 z-20">
           <div className="flex items-center gap-4">
             <button 
-              className="text-slate-500 hover:text-slate-700 cursor-pointer"
+              className="text-slate-400 hover:text-white cursor-pointer"
               onClick={() => setSidebarOpen(!sidebarOpen)}
             >
               <Menu className="w-5 h-5" />
             </button>
-            <h2 className="text-base font-bold text-slate-800 uppercase tracking-wide hidden sm:block">
+            <h2 className="text-base font-bold text-white uppercase tracking-wide hidden sm:block">
               Rick Nees Appliance Repair Administration
             </h2>
           </div>
@@ -121,12 +122,12 @@ export const AdminLayout: React.FC = () => {
             </button>
 
             {/* User Profile Info */}
-            <div className="flex items-center gap-2 border-l pl-4 border-slate-200">
-              <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xs">
+            <div className="flex items-center gap-2 border-l pl-4 border-slate-800">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xs">
                 RN
               </div>
               <div className="hidden md:block leading-tight text-xs">
-                <p className="font-semibold text-slate-800">Rick Nees</p>
+                <p className="font-semibold text-white">Rick Nees</p>
                 <p className="text-[10px] text-slate-400 uppercase font-bold">Owner / Admin</p>
               </div>
             </div>
@@ -173,7 +174,7 @@ export const AdminLayout: React.FC = () => {
         </header>
 
         {/* Content Body Router Outlet */}
-        <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-slate-50">
+        <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-slate-950">
           <Outlet />
         </main>
 
