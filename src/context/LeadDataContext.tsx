@@ -322,6 +322,23 @@ export const LeadDataProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     };
 
     loadData();
+
+    if (supabase) {
+      const channel = supabase
+        .channel('schema-db-changes')
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'leads' },
+          () => {
+            loadData();
+          }
+        )
+        .subscribe();
+
+      return () => {
+        supabase.removeChannel(channel);
+      };
+    }
   }, []);
 
   // Write Helpers

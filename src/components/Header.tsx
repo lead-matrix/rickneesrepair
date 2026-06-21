@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ onBookClick }) => {
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5">
             <Award className="w-3.5 h-3.5 text-accent fill-accent animate-pulse" />
-            <span>Serving Wichita & Surrounding Areas for 40+ Years</span>
+            <span>Serving Wichita, KS Exclusively for 40+ Years</span>
           </div>
           <span className="hidden sm:inline bg-red-600 text-white text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full border border-red-400/30">
             Master Mechanical AC Contractor

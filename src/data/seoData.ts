@@ -87,6 +87,29 @@ export const servicesData: ServiceData[] = [
     ]
   },
   {
+    id: 'air-conditioner-repair',
+    name: 'Air Conditioner Repair',
+    keyword: 'air conditioner repair Wichita',
+    shortDesc: 'Keep cool in Wichita summers with fast, reliable AC condenser repairs.',
+    fullDesc: 'When the Kansas summer heat hits, a broken air conditioner is an absolute emergency. We diagnose and repair central air conditioners, heat pumps, and ductless systems. We replace bad capacitors, contactor switches, fan motors, and locate refrigerant leaks, restoring cold air to your home quickly.',
+    symptoms: [
+      'AC blows warm air from the vents',
+      'Outdoor condenser unit is not spinning or running',
+      'Ice forming on the copper coils or evaporator',
+      'AC cycles on and off rapidly (short-cycling)',
+      'Water leaking near the indoor furnace/air handler'
+    ],
+    tips: [
+      'Change your air filters every 30 to 90 days to maintain airflow and prevent frozen coils.',
+      'Keep weeds, leaves, and debris cleared away from the outdoor condenser unit.',
+      'Have a professional tune-up your system every spring before the hot weather starts.'
+    ],
+    faqs: [
+      { q: 'Why is my AC blowing warm air?', a: 'This is often caused by a dirty air filter blocking air flow, a bad capacitor preventing the outdoor compressor from starting, or low refrigerant levels.' },
+      { q: 'How often should I change my AC filter?', a: 'Every 3 months is standard. If you have pets or allergies, change it monthly to keep the air clean and system load low.' }
+    ]
+  },
+  {
     id: 'refrigerator-repair',
     name: 'Refrigerator Repair',
     keyword: 'refrigerator repair Wichita',
@@ -340,29 +363,6 @@ export const servicesData: ServiceData[] = [
     ]
   },
   {
-    id: 'air-conditioner-repair',
-    name: 'Air Conditioner Repair',
-    keyword: 'air conditioner repair Wichita',
-    shortDesc: 'Keep cool in Wichita summers with fast, reliable AC condenser repairs.',
-    fullDesc: 'When the Kansas summer heat hits, a broken air conditioner is an absolute emergency. We diagnose and repair central air conditioners, heat pumps, and ductless systems. We replace bad capacitors, contactor switches, fan motors, and locate refrigerant leaks, restoring cold air to your home quickly.',
-    symptoms: [
-      'AC blows warm air from the vents',
-      'Outdoor condenser unit is not spinning or running',
-      'Ice forming on the copper coils or evaporator',
-      'AC cycles on and off rapidly (short-cycling)',
-      'Water leaking near the indoor furnace/air handler'
-    ],
-    tips: [
-      'Change your air filters every 30 to 90 days to maintain airflow and prevent frozen coils.',
-      'Keep weeds, leaves, and debris cleared away from the outdoor condenser unit.',
-      'Have a professional tune-up your system every spring before the hot weather starts.'
-    ],
-    faqs: [
-      { q: 'Why is my AC blowing warm air?', a: 'This is often caused by a dirty air filter blocking air flow, a bad capacitor preventing the outdoor compressor from starting, or low refrigerant levels.' },
-      { q: 'How often should I change my AC filter?', a: 'Every 3 months is standard. If you have pets or allergies, change it monthly to keep the air clean and system load low.' }
-    ]
-  },
-  {
     id: 'commercial-appliance-repair',
     name: 'Commercial Appliance Repair',
     keyword: 'commercial appliance repair Wichita',
@@ -426,230 +426,6 @@ export const citiesData: CityData[] = [
     faq: [
       { q: 'How quickly can you repair appliances in Wichita?', a: 'Since we are based locally, we often have a technician near you and can offer same-day service for bookings made in the morning.' },
       { q: 'Are you licensed to work on gas appliances in Wichita?', a: 'Yes, we are fully licensed, insured, and certified for both gas and electric appliance repairs in the City of Wichita.' }
-    ]
-  },
-  {
-    id: 'derby',
-    name: 'Derby',
-    zips: ['67037'],
-    landmarks: ['Rock Regional Hospital', 'High Park', 'Derby Marketplace'],
-    neighborhoods: ['Stone Creek', 'Oakwood Valley', 'El Paso'],
-    intro: 'Derby residents deserve prompt, professional service. We regularly dispatch technicians down Rock Road to serve homeowners in Derby, KS, repairing refrigerators, laundry machines, and kitchen ranges quickly.',
-    highlights: [
-      'Frequent service routes to Derby, Kansas',
-      'Local technicians familiar with the Derby area',
-      'Prompt response for homes near High Park and local schools'
-    ],
-    faq: [
-      { q: 'Do you charge extra travel fees for Derby?', a: 'No. Derby is within our standard service area. You pay the same flat diagnostic fee as our Wichita customers.' }
-    ]
-  },
-  {
-    id: 'andover',
-    name: 'Andover',
-    zips: ['67002'],
-    landmarks: ['Andover Central High School', '13th Street Sports Park', 'Terradyne Country Club'],
-    neighborhoods: ['Crescent Lakes', 'Prairie Creek', 'Flint Hills'],
-    intro: 'Serving Andover, KS, with high-end residential appliance repairs. We regularly service premium brands like Sub-Zero, Wolf, and Bosch in Andover\'s golf and family communities.',
-    highlights: [
-      'Specialized experience with luxury appliance brands in Andover',
-      'Same-day appointments for busy families',
-      'Licensed technicians passing comprehensive background checks'
-    ],
-    faq: [
-      { q: 'Can you repair high-end built-in appliances in Andover?', a: 'Absolutely. We specialize in luxury brands like Sub-Zero, Wolf, Viking, and Thermador, commonly found in Andover homes.' }
-    ]
-  },
-  {
-    id: 'bel-aire',
-    name: 'Bel Aire',
-    zips: ['67220', '67226'],
-    landmarks: ['Bel Aire City Hall', 'Wichita Country Club (nearby)'],
-    neighborhoods: ['Central Park', 'Elk Creek', 'Highland Park'],
-    intro: 'Quiet neighborhoods in Bel Aire deserve fast response times. We cover the entire Bel Aire community, bringing prompt appliance repair to your doorstep.',
-    highlights: [
-      'Local routes covering Bel Aire daily',
-      'Expert stove, oven, and refrigerator repair',
-      'Same-day service available'
-    ],
-    faq: [
-      { q: 'Do you service Bel Aire on weekends?', a: 'Yes, we provide emergency weekend service for critical appliance failures like leaking dishwashers or warm freezers.' }
-    ]
-  },
-  {
-    id: 'park-city',
-    name: 'Park City',
-    zips: ['67147'],
-    landmarks: ['Hartman Arena', 'Park City Public Library'],
-    neighborhoods: ['Chisholm Trail', 'Valley Park'],
-    intro: 'Located just north of Wichita, Park City homeowners trust Rick Nees Appliance Repair to keep their washers, dryers, and kitchen appliances working correctly.',
-    highlights: [
-      'Prompt response for homes near Hartman Arena',
-      'Same-day repair service',
-      '100% satisfaction guarantee'
-    ],
-    faq: [
-      { q: 'Which brands do you service in Park City?', a: 'We service all major brands, including Samsung, Whirlpool, LG, GE, Maytag, and Kenmore.' }
-    ]
-  },
-  {
-    id: 'maize',
-    name: 'Maize',
-    zips: ['67101'],
-    landmarks: ['Maize High School', 'Maize South High School'],
-    neighborhoods: ['Carriage Crossing', 'Watercress', 'Maize Northwest'],
-    intro: 'The fast-growing community of Maize, KS is a core part of our service area. We support local families with reliable scheduling and fast, same-day appliance fixes.',
-    highlights: [
-      'Daily service routes in Maize, KS',
-      'Experienced in newer appliance electronics and sensors',
-      'Same-day repair booking'
-    ],
-    faq: [
-      { q: 'Do you repair smart appliances in Maize?', a: 'Yes, our technicians are trained in the latest smart-home appliance brands and digital diagnostics.' }
-    ]
-  },
-  {
-    id: 'goddard',
-    name: 'Goddard',
-    zips: ['67052'],
-    landmarks: ['Goddard Linear Park', 'Tanganyika Wildlife Park'],
-    neighborhoods: ['Oak Ridge', 'Wildwood', 'Elk Ridge'],
-    intro: 'Serving Goddard, KS homeowners with expert appliance diagnostics and repair. We fix everything from garbage disposals to commercial-grade kitchen equipment.',
-    highlights: [
-      'Goddard area residential specialists',
-      'Licensed, bonded, and fully insured',
-      'Warranty provided on all parts and labor'
-    ],
-    faq: [
-      { q: 'How long are your warranties on repairs in Goddard?', a: 'We offer an industry-leading warranty on both parts and labor, typically 90 days to a year depending on the OEM component.' }
-    ]
-  },
-  {
-    id: 'haysville',
-    name: 'Haysville',
-    zips: ['67060'],
-    landmarks: ['Haysville Historic District', 'Riggs Park'],
-    neighborhoods: ['Timberlane', 'Peach Tree', 'Haysville South'],
-    intro: 'Haysville residents count on Rick Nees for professional appliance repairs. We arrive on time, diagnose the problem honestly, and repair it right the first time.',
-    highlights: [
-      'Serving Haysville homes for 40 years',
-      'Flat-rate honest diagnostic fee',
-      'Local technicians who respect your home'
-    ],
-    faq: [
-      { q: 'Do you fix older appliances in Haysville?', a: 'Yes! We have parts access for appliances that are 10-20 years old and have the experience to repair them reliably.' }
-    ]
-  },
-  {
-    id: 'valley-center',
-    name: 'Valley Center',
-    zips: ['67147'],
-    landmarks: ['Valley Center High School', 'McLaughlin Park'],
-    neighborhoods: ['Meadowlark', 'Northfields', 'Valley Creek'],
-    intro: 'We bring high-quality appliance repair north to Valley Center, KS. Don\'t let a broken refrigerator or leaking dishwasher spoil your week.',
-    highlights: [
-      'Dedicated service scheduling for Valley Center',
-      'Emergency repairs available',
-      'Honest, local service technicians'
-    ],
-    faq: [
-      { q: 'How do I book service in Valley Center?', a: 'You can call us directly at (316) 213-1874 or use our convenient online booking form to secure your spot.' }
-    ]
-  },
-  {
-    id: 'augusta',
-    name: 'Augusta',
-    zips: ['67010'],
-    landmarks: ['Augusta City Lake', 'Historic Augusta Theatre'],
-    neighborhoods: ['Lakeside', 'Augusta North'],
-    intro: 'We service Augusta, KS, providing top-notch repairs for refrigerators, ranges, washers, and dryers. Experience the peace of mind of local, honest service.',
-    highlights: [
-      'Routes covering Augusta, KS',
-      'Same-day service capability',
-      'Family-owned business trust'
-    ],
-    faq: [
-      { q: 'Do you service commercial properties in Augusta?', a: 'Yes, we offer commercial appliance repairs for Augusta restaurants, offices, and commercial facilities.' }
-    ]
-  },
-  {
-    id: 'mulvane',
-    name: 'Mulvane',
-    zips: ['67110'],
-    landmarks: ['Kansas Star Casino', 'Mulvane Historical Museum'],
-    neighborhoods: ['Mulvane East', 'Casino Area'],
-    intro: 'Mulvane homeowners trust Rick Nees Appliance Repair for speed and quality. We specialize in same-day repairs for major appliance brands.',
-    highlights: [
-      'Servicing Mulvane, Kansas',
-      'Available for emergency callouts',
-      'Fully licensed and insured'
-    ],
-    faq: [
-      { q: 'Can you service appliances near the Kansas Star Casino?', a: 'Yes, we cover the entire Mulvane area, including both residential homes and commercial business properties.' }
-    ]
-  },
-  {
-    id: 'clearwater',
-    name: 'Clearwater',
-    zips: ['67026'],
-    landmarks: ['Clearwater Historical Museum', 'Chisholm Trail Sports Complex'],
-    neighborhoods: ['Clearwater North', 'Chisholm Ridge'],
-    intro: 'Clearwater residents trust us to deliver friendly, honest appliance repair services. We fix washers, ovens, stoves, and dryers on the first visit.',
-    highlights: [
-      'Clearwater service availability',
-      'Trucks stocked with common OEM parts',
-      'No-hassle booking policy'
-    ],
-    faq: [
-      { q: 'Is same-day service available in Clearwater?', a: 'Yes, depending on our daily technician route sheets, we can often schedule same-day repair service in Clearwater.' }
-    ]
-  },
-  {
-    id: 'rose-hill',
-    name: 'Rose Hill',
-    zips: ['67133'],
-    landmarks: ['Rose Hill High School', 'Shorty Cox Park'],
-    neighborhoods: ['Siena', 'Rose Hill East'],
-    intro: 'We support the Rose Hill, KS community with professional home service. Get your refrigerator, dishwasher, or range repaired quickly by local experts.',
-    highlights: [
-      'Serving Rose Hill families',
-      'Experienced in all major brands',
-      'Same-day scheduling'
-    ],
-    faq: [
-      { q: 'Do you charge a diagnostic fee in Rose Hill?', a: 'Yes, we charge a standard diagnostic fee to cover travel and technician time, which is waived when you approve the repair.' }
-    ]
-  },
-  {
-    id: 'kechi',
-    name: 'Kechi',
-    zips: ['67067'],
-    landmarks: ['Kechi City Park', 'Karg Art Glass'],
-    neighborhoods: ['Kechi North', 'Karg Community'],
-    intro: 'For over 40 years, we have provided Kechi, KS with exceptional appliance repair services. We repair refrigerators, ovens, and washers with speed and integrity.',
-    highlights: [
-      'Kechi area local service',
-      'Highly rated customer support',
-      'Fast, same-day repairs'
-    ],
-    faq: [
-      { q: 'Are you available to fix Kechi appliances today?', a: 'Yes, call (316) 213-1874 to check today\'s availability for Kechi.' }
-    ]
-  },
-  {
-    id: 'colwich',
-    name: 'Colwich',
-    zips: ['67030'],
-    landmarks: ['Colwich City Hall', 'Andale/Colwich Area Schools'],
-    neighborhoods: ['Colwich Center', 'Colwich North'],
-    intro: 'Colwich homeowners count on our rapid response times. We fix dryers, freezers, ice makers, and garbage disposals on-site with local expertise.',
-    highlights: [
-      'Colwich area coverage',
-      'Certified and background-checked technicians',
-      'Honest repair vs replace advice'
-    ],
-    faq: [
-      { q: 'Will you let me know if it\'s better to replace my appliance?', a: 'Yes, our core value is honesty. If a repair is not economical, we will tell you and help you make the best decision.' }
     ]
   }
 ];

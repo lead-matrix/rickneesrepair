@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ onBookClick }) => {
               </a>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-accent" />
-                <span>Wichita, KS & Surrounding Area</span>
+                <span>Wichita, KS (Served Exclusively)</span>
               </div>
               <a href="mailto:info@neesrepair.xyz" className="flex items-center gap-2 hover:text-white transition">
                 <Mail className="w-4 h-4 text-accent" />

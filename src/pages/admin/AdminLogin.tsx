@@ -71,7 +71,7 @@ export const AdminLogin: React.FC = () => {
                 onChange={e => setEmail(e.target.value)}
                 placeholder="info@neesrepair.xyz"
                 className="w-full bg-slate-800 border border-slate-700 text-white text-sm rounded-xl px-4 py-3 
-                           placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 transition"
+                           placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 transition"
               />
             </div>
 
@@ -88,7 +88,7 @@ export const AdminLogin: React.FC = () => {
                   onChange={e => setPassword(e.target.value)}
                   placeholder="••••••••"
                   className="w-full bg-slate-800 border border-slate-700 text-white text-sm rounded-xl px-4 py-3 pr-10
-                             placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 transition"
+                             placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/30 transition"
                 />
                 <button
                   type="button"
