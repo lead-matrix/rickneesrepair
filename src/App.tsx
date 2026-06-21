@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { LeadDataProvider } from './context/LeadDataContext';
+import { AuthProvider, useAuth } from './lib/authContext';
+import { supabase } from './lib/supabaseClient';
 import SchemaMarkup from './components/SchemaMarkup';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,6 +23,7 @@ import {
 
 // Admin CRM Pages
 import AdminLayout from './pages/admin/AdminLayout';
+import AdminLogin from './pages/admin/AdminLogin';
 import Dashboard from './pages/admin/Dashboard';
 import LeadsKanban from './pages/admin/LeadsKanban';
 import CalendarView from './pages/admin/CalendarView';
@@ -28,7 +31,33 @@ import Technicians from './pages/admin/Technicians';
 import Invoices from './pages/admin/Invoices';
 import Settings from './pages/admin/Settings';
 
-// A wrapper component to conditionally hide client header/footer on admin routes
+// ─── Protected Route Guard ───────────────────────────────────────
+// When Supabase is configured: require auth session
+// When no Supabase: pass through (local development mode)
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { user, loading } = useAuth();
+
+  if (!supabase) {
+    // Local mode — no auth required
+    return <>{children}</>;
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/admin/login" replace />;
+  }
+
+  return <>{children}</>;
+};
+
+// ─── App Content (inside Router) ─────────────────────────────────
 const AppContent: React.FC = () => {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
@@ -73,8 +102,18 @@ const AppContent: React.FC = () => {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
 
-          {/* Admin CRM Routes */}
-          <Route path="/admin" element={<AdminLayout />}>
+          {/* Admin Login (public) */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+
+          {/* Admin CRM Routes (protected) */}
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Dashboard />} />
             <Route path="leads" element={<LeadsKanban />} />
             <Route path="calendar" element={<CalendarView />} />
@@ -98,10 +137,12 @@ const AppContent: React.FC = () => {
 
 export default function App() {
   return (
-    <LeadDataProvider>
-      <Router>
-        <AppContent />
-      </Router>
-    </LeadDataProvider>
+    <AuthProvider>
+      <LeadDataProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </LeadDataProvider>
+    </AuthProvider>
   );
 }

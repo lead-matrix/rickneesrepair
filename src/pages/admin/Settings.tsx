@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useLeadData } from '../../context/LeadDataContext';
-import { Save, Mail, Shield, Check, Info } from 'lucide-react';
+import { useAuth } from '../../lib/authContext';
+import { supabase } from '../../lib/supabaseClient';
+import { Save, Mail, Shield, Check, Info, LogOut, Database } from 'lucide-react';
 
 export const Settings: React.FC = () => {
   const { templates, saveTemplates } = useLeadData();
+  const { user, role, signOut } = useAuth();
+  const isLiveMode = !!supabase;
 
   // Local state for template editors
   const [emailTemplate, setEmailTemplate] = useState(templates.email);
@@ -110,13 +114,31 @@ export const Settings: React.FC = () => {
             <div className="space-y-4 text-xs">
               <div>
                 <span className="block font-bold text-slate-400 uppercase tracking-wider text-[9px] mb-1">Database Mode</span>
-                <span className="bg-green-50 border border-green-200 text-green-700 px-2 py-0.5 rounded font-mono font-bold text-[10px]">
-                  LOCAL STORAGE MODE
-                </span>
+                {isLiveMode ? (
+                  <span className="bg-blue-50 border border-blue-200 text-blue-700 px-2 py-0.5 rounded font-mono font-bold text-[10px] flex items-center gap-1 w-fit">
+                    <Database className="w-3 h-3" /> SUPABASE LIVE
+                  </span>
+                ) : (
+                  <span className="bg-amber-50 border border-amber-200 text-amber-700 px-2 py-0.5 rounded font-mono font-bold text-[10px]">
+                    LOCAL STORAGE MODE
+                  </span>
+                )}
                 <p className="text-[10px] text-slate-400 mt-1.5 leading-normal">
-                  CRM operates in local persistence mode. Pre-seeded with Wichita data.
+                  {isLiveMode
+                    ? 'CRM is persisting data to your live Supabase PostgreSQL database.'
+                    : 'CRM operates in local mode. Add VITE_SUPABASE_URL & VITE_SUPABASE_ANON_KEY to connect.'}
                 </p>
               </div>
+
+              {user && (
+                <div>
+                  <span className="block font-bold text-slate-400 uppercase tracking-wider text-[9px] mb-1">Signed In As</span>
+                  <p className="text-slate-700 font-mono text-[10px] truncate">{user.email}</p>
+                  <span className="inline-block bg-primary/10 text-primary px-2 py-0.5 rounded font-bold text-[9px] uppercase mt-1">
+                    {role ?? 'admin'}
+                  </span>
+                </div>
+              )}
 
               <div>
                 <span className="block font-bold text-slate-400 uppercase tracking-wider text-[9px] mb-1">Twilio Integration</span>
@@ -125,12 +147,23 @@ export const Settings: React.FC = () => {
                 </span>
               </div>
 
-              <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex gap-2">
-                <Info className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
-                <p className="text-[10px] text-slate-500 leading-normal">
-                  To connect your live database, configure the Supabase URL and Keys in your environment variables.
-                </p>
-              </div>
+              {!isLiveMode && (
+                <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex gap-2">
+                  <Info className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
+                  <p className="text-[10px] text-slate-500 leading-normal">
+                    Add <code className="font-mono bg-slate-200 px-1 rounded">VITE_SUPABASE_URL</code> and <code className="font-mono bg-slate-200 px-1 rounded">VITE_SUPABASE_ANON_KEY</code> in Vercel to connect the live database.
+                  </p>
+                </div>
+              )}
+
+              {isLiveMode && (
+                <button
+                  onClick={signOut}
+                  className="flex items-center gap-2 text-[10px] text-red-500 hover:text-red-600 font-bold uppercase tracking-wider transition cursor-pointer"
+                >
+                  <LogOut className="w-3 h-3" /> Sign Out
+                </button>
+              )}
             </div>
           </div>
         </div>
