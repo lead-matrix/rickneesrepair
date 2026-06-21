@@ -45,20 +45,26 @@ export const Home: React.FC<HomeProps> = ({ onBookClick }) => {
             {/* Hero Left Content */}
             <div className="lg:col-span-7 text-white space-y-6">
               
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider text-accent-light">
-                <Sparkles className="w-3.5 h-3.5 animate-pulse" /> Wichita's First Choice
+              {/* Badges */}
+              <div className="flex flex-wrap gap-2.5">
+                <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider text-accent-light">
+                  <Sparkles className="w-3.5 h-3.5 animate-pulse" /> Wichita's First Choice
+                </div>
+                <div className="inline-flex items-center gap-2 bg-primary/45 border border-primary/60 rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider text-slate-100">
+                  <Award className="w-3.5 h-3.5 text-accent animate-pulse" /> Master Mechanical AC Contractor
+                </div>
               </div>
               
               {/* Main Headline */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black font-heading tracking-tight text-white uppercase leading-[1.05] drop-shadow-md">
-                Wichita's Trusted <br className="hidden sm:inline" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">Appliance Repair</span> Experts
+                Wichita's Master <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-red-500 to-amber-500">Mechanical AC</span> <br />
+                & Appliance Repair
               </h1>
               
               {/* Subheadline */}
               <p className="text-lg md:text-xl font-medium text-slate-300 max-w-xl">
-                Serving Wichita Homeowners for Over 40 Years. Same-day diagnostics and repairs on washers, dryers, refrigerators, dishwashers, ovens, and more.
+                Licensed Master Mechanical Contractor & Wichita's trusted appliance repair specialists for 40+ years. Same-day service on AC units, heating, refrigerators, washers, dryers, and more.
               </p>
 
               {/* Trust Badges Bar */}
@@ -66,22 +72,22 @@ export const Home: React.FC<HomeProps> = ({ onBookClick }) => {
                 <div className="flex items-center gap-2">
                   <Award className="w-5 h-5 text-accent flex-shrink-0" />
                   <div className="text-[11px] leading-tight">
-                    <p className="font-bold text-white uppercase">40 Years</p>
-                    <p className="text-slate-400">Experience</p>
+                    <p className="font-bold text-white uppercase">Master Licensed</p>
+                    <p className="text-slate-400">Mechanical AC</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-accent flex-shrink-0" />
                   <div className="text-[11px] leading-tight">
-                    <p className="font-bold text-white uppercase">Licensed</p>
-                    <p className="text-slate-400">& Insured</p>
+                    <p className="font-bold text-white uppercase">40+ Years</p>
+                    <p className="text-slate-400">Local Service</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-accent flex-shrink-0" />
                   <div className="text-[11px] leading-tight">
                     <p className="font-bold text-white uppercase">Same-Day</p>
-                    <p className="text-slate-400">Service Promise</p>
+                    <p className="text-slate-400">Promise</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">

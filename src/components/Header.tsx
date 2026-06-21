@@ -35,9 +35,14 @@ export const Header: React.FC<HeaderProps> = ({ onBookClick }) => {
     <>
       {/* Top Banner Ribbon */}
       <div className="bg-primary text-white text-[11px] font-semibold py-2 px-4 flex flex-col sm:flex-row justify-between items-center gap-1.5 border-b border-white/5 z-40 relative">
-        <div className="flex items-center gap-1.5">
-          <Award className="w-3.5 h-3.5 text-accent fill-accent animate-pulse" />
-          <span>Serving Wichita & Surrounding Areas for 40+ Years</span>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5">
+            <Award className="w-3.5 h-3.5 text-accent fill-accent animate-pulse" />
+            <span>Serving Wichita & Surrounding Areas for 40+ Years</span>
+          </div>
+          <span className="hidden sm:inline bg-red-600 text-white text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full border border-red-400/30">
+            Master Mechanical AC Contractor
+          </span>
         </div>
         <div className="flex items-center gap-4 text-white/90">
           <span>Same-Day Service Available</span>
@@ -58,18 +63,12 @@ export const Header: React.FC<HeaderProps> = ({ onBookClick }) => {
           
           {/* Logo Container */}
           <Link to="/" className="flex items-center gap-2 group select-none">
-            <div className="flex flex-col text-left">
-              {/* Chrome-Style metallic text effect */}
-              <div className="text-xl md:text-2xl font-black font-heading tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 leading-none">
-                RICK NEES
-              </div>
-              <div className="flex items-center gap-1 mt-0.5">
-                <span className="h-[2px] w-3 bg-accent" />
-                <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-300 leading-none">
-                  APPLIANCE REPAIR
-                </span>
-              </div>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Rick Nees Appliance Repair" 
+              className="h-12 md:h-14 w-auto object-contain drop-shadow-lg"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
           </Link>
 
           {/* Desktop Navigation Links */}

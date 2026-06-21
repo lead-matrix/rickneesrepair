@@ -5,7 +5,7 @@ import confetti from 'canvas-confetti';
 import { 
   Phone, MapPin, Clock, Star, 
   HelpCircle, CheckCircle, Sparkles, CreditCard, 
-  DollarSign, Send
+  DollarSign, Send, Mail
 } from 'lucide-react';
 
 interface BookableProps {
@@ -541,6 +541,16 @@ export const Contact: React.FC = () => {
                     <p className="text-slate-800 font-semibold">Wichita, KS &amp; Surrounding Areas</p>
                   </div>
                 </div>
+
+                <a href="mailto:info@neesrepair.xyz" className="flex items-center gap-3 hover:text-primary transition text-slate-600">
+                  <div className="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-accent shadow-xs">
+                    <Mail className="w-5 h-5 text-accent" />
+                  </div>
+                  <div className="text-xs">
+                    <p className="font-bold text-slate-500 uppercase tracking-wide">Email Address</p>
+                    <p className="text-sm font-bold text-slate-800">info@neesrepair.xyz</p>
+                  </div>
+                </a>
               </div>
             </div>
 

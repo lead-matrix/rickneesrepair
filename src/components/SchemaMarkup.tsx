@@ -17,10 +17,11 @@ export const SchemaMarkup: React.FC = () => {
     const orgSchema = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      '@id': 'https://rickneesrepair.com/#organization',
+      '@id': 'https://neesrepair.xyz/#organization',
       'name': 'Rick Nees Appliance Repair',
-      'url': 'https://rickneesrepair.com',
-      'logo': 'https://rickneesrepair.com/assets/logo.png', // Fallback URL
+      'url': 'https://neesrepair.xyz',
+      'logo': 'https://neesrepair.xyz/logo.png',
+      'email': 'info@neesrepair.xyz',
       'contactPoint': {
         '@type': 'ContactPoint',
         'telephone': '+1-316-213-1874',
@@ -34,11 +35,13 @@ export const SchemaMarkup: React.FC = () => {
     // 2. Core LocalBusiness Schema
     const localBusinessSchema = {
       '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      '@id': 'https://rickneesrepair.com/#localbusiness',
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': 'https://neesrepair.xyz/#localbusiness',
       'name': 'Rick Nees Appliance Repair',
-      'image': 'https://rickneesrepair.com/assets/hero-tech.jpg', // Placeholder
+      'description': "Wichita's trusted Master Mechanical AC Contractor and appliance repair service for over 40 years.",
+      'image': 'https://neesrepair.xyz/og-image.png',
       'telephone': '+1-316-213-1874',
+      'email': 'info@neesrepair.xyz',
       'priceRange': '$$',
       'address': {
         '@type': 'PostalAddress',
@@ -53,7 +56,7 @@ export const SchemaMarkup: React.FC = () => {
         'latitude': 37.6872,
         'longitude': -97.3301
       },
-      'url': 'https://rickneesrepair.com',
+      'url': 'https://neesrepair.xyz',
       'openingHoursSpecification': {
         '@type': 'OpeningHoursSpecification',
         'dayOfWeek': [
@@ -71,7 +74,8 @@ export const SchemaMarkup: React.FC = () => {
       'sameAs': [
         'https://www.facebook.com/rickneesrepair', // Mock FB
         'https://g.page/rickneesrepair' // Mock Google
-      ]
+      ],
+      'hasCredential': 'Master Mechanical Contractor License'
     };
     schemas.push(localBusinessSchema);
 
@@ -79,10 +83,10 @@ export const SchemaMarkup: React.FC = () => {
     const websiteSchema = {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      'url': 'https://rickneesrepair.com',
+      'url': 'https://neesrepair.xyz',
       'name': 'Rick Nees Appliance Repair',
       'publisher': {
-        '@id': 'https://rickneesrepair.com/#organization'
+        '@id': 'https://neesrepair.xyz/#organization'
       }
     };
     schemas.push(websiteSchema);
@@ -99,7 +103,7 @@ export const SchemaMarkup: React.FC = () => {
             '@type': 'ListItem',
             'position': 1,
             'name': 'Home',
-            'item': 'https://rickneesrepair.com/'
+            'item': 'https://neesrepair.xyz/'
           },
           ...pathSegments.map((segment, idx) => {
             const currentPath = `/${pathSegments.slice(0, idx + 1).join('/')}`;
@@ -108,7 +112,7 @@ export const SchemaMarkup: React.FC = () => {
               '@type': 'ListItem',
               'position': idx + 2,
               'name': name,
-              'item': `https://rickneesrepair.com${currentPath}`
+              'item': `https://neesrepair.xyz${currentPath}`
             };
           })
         ]
@@ -128,7 +132,7 @@ export const SchemaMarkup: React.FC = () => {
           'name': `${service.name} in Wichita`,
           'serviceType': service.name,
           'provider': {
-            '@id': 'https://rickneesrepair.com/#localbusiness'
+            '@id': 'https://neesrepair.xyz/#localbusiness'
           },
           'areaServed': {
             '@type': 'AdministrativeArea',
@@ -168,7 +172,7 @@ export const SchemaMarkup: React.FC = () => {
           'name': `Appliance Repair in ${city.name}, KS`,
           'serviceType': 'Appliance Repair',
           'provider': {
-            '@id': 'https://rickneesrepair.com/#localbusiness'
+            '@id': 'https://neesrepair.xyz/#localbusiness'
           },
           'areaServed': {
             '@type': 'City',

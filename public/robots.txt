@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://rickneesrepair.com/sitemap.xml
+Sitemap: https://neesrepair.xyz/sitemap.xml

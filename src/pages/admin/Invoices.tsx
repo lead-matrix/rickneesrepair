@@ -49,7 +49,7 @@ export const Invoices: React.FC = () => {
             <div class="business">
               <h2 style="margin:0; font-family:Impact,sans-serif; color:#0B2E59;">RICK NEES APPLIANCE REPAIR</h2>
               <p style="margin:4px 0; font-size:12px;">Wichita, KS &bull; (316) 213-1874</p>
-              <p style="margin:0; font-size:12px; color:#64748B;">service@rickneesrepair.com</p>
+              <p style="margin:0; font-size:12px; color:#64748B;">info@neesrepair.xyz</p>
             </div>
             <div class="client">
               <h3 style="margin:0;">INVOICE</h3>

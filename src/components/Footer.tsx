@@ -17,19 +17,14 @@ export const Footer: React.FC<FooterProps> = ({ onBookClick }) => {
           
           {/* Company Column */}
           <div className="flex flex-col text-left">
-            <Link to="/" className="flex items-center gap-2 mb-4 group select-none">
-              <div className="flex flex-col">
-                <div className="text-2xl font-black font-heading tracking-wider text-white leading-none">
-                  RICK NEES
-                </div>
-                <div className="flex items-center gap-1 mt-0.5">
-                  <span className="h-[2px] w-3 bg-accent" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 leading-none">
-                    APPLIANCE REPAIR
-                  </span>
-                </div>
-              </div>
-            </Link>
+          <Link to="/" className="flex items-center gap-2 mb-4 group select-none">
+            <img 
+              src="/logo.png" 
+              alt="Rick Nees Appliance Repair" 
+              className="h-16 w-auto object-contain"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+          </Link>
             
             <p className="text-xs text-slate-400 leading-relaxed mb-6">
               Wichita's premier local appliance repair service for over 40 years. Same-day diagnostics and repairs backed by parts and labor warranties.
@@ -43,6 +38,9 @@ export const Footer: React.FC<FooterProps> = ({ onBookClick }) => {
               <span className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-[9px] font-bold uppercase text-white tracking-wide">
                 <CheckCircle className="w-3 h-3 text-accent" /> Licensed & Insured
               </span>
+              <span className="flex items-center gap-1 bg-red-900/40 border border-red-500/30 rounded-full px-3 py-1 text-[9px] font-bold uppercase text-red-300 tracking-wide">
+                <Award className="w-3 h-3 text-red-400" /> Master Mechanical AC
+              </span>
             </div>
             
             {/* NAP Info */}
@@ -55,10 +53,10 @@ export const Footer: React.FC<FooterProps> = ({ onBookClick }) => {
                 <MapPin className="w-4 h-4 text-accent" />
                 <span>Wichita, KS & Surrounding Area</span>
               </div>
-              <div className="flex items-center gap-2">
+              <a href="mailto:info@neesrepair.xyz" className="flex items-center gap-2 hover:text-white transition">
                 <Mail className="w-4 h-4 text-accent" />
-                <span>service@rickneesrepair.com</span>
-              </div>
+                <span>info@neesrepair.xyz</span>
+              </a>
             </div>
           </div>
 

@@ -93,10 +93,10 @@ const LeadDataContext = createContext<LeadDataContextType | undefined>(undefined
 
 // Initial default data for local mode
 const defaultTechnicians: Technician[] = [
-  { id: 'tech-1', name: 'Dave Miller', phone: '(316) 555-0101', email: 'dave@rickneesrepair.com', specialties: ['Washers', 'Dryers', 'Dishwashers'], status: 'active', rating: 4.9 },
-  { id: 'tech-2', name: 'John Nees', phone: '(316) 555-0102', email: 'john@rickneesrepair.com', specialties: ['Refrigerators', 'Freezers', 'Ice Makers', 'Wine Coolers'], status: 'active', rating: 5.0 },
-  { id: 'tech-3', name: 'Mark Vance', phone: '(316) 555-0103', email: 'mark@rickneesrepair.com', specialties: ['Ovens', 'Stoves', 'Ranges', 'Cooktops', 'Microwaves'], status: 'active', rating: 4.8 },
-  { id: 'tech-4', name: 'Tyler Reed', phone: '(316) 555-0104', email: 'tyler@rickneesrepair.com', specialties: ['Commercial Equipment', 'Garbage Disposals', 'Air Conditioners'], status: 'active', rating: 4.7 }
+  { id: 'tech-1', name: 'Dave Miller', phone: '(316) 555-0101', email: 'dave@neesrepair.xyz', specialties: ['Washers', 'Dryers', 'Dishwashers'], status: 'active', rating: 4.9 },
+  { id: 'tech-2', name: 'John Nees', phone: '(316) 555-0102', email: 'john@neesrepair.xyz', specialties: ['Refrigerators', 'Freezers', 'Ice Makers', 'Wine Coolers'], status: 'active', rating: 5.0 },
+  { id: 'tech-3', name: 'Mark Vance', phone: '(316) 555-0103', email: 'mark@neesrepair.xyz', specialties: ['Ovens', 'Stoves', 'Ranges', 'Cooktops', 'Microwaves'], status: 'active', rating: 4.8 },
+  { id: 'tech-4', name: 'Tyler Reed', phone: '(316) 555-0104', email: 'tyler@neesrepair.xyz', specialties: ['Commercial Equipment', 'Garbage Disposals', 'Air Conditioners'], status: 'active', rating: 4.7 }
 ];
 
 const defaultLeads: Lead[] = [

@@ -2,73 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://rickneesrepair.com/</loc>
+    <loc>https://neesrepair.xyz/</loc>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://rickneesrepair.com/about</loc>
+    <loc>https://neesrepair.xyz/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://rickneesrepair.com/brands</loc>
+    <loc>https://neesrepair.xyz/brands</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://rickneesrepair.com/financing</loc>
+    <loc>https://neesrepair.xyz/financing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://rickneesrepair.com/reviews</loc>
+    <loc>https://neesrepair.xyz/reviews</loc>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://rickneesrepair.com/blog</loc>
+    <loc>https://neesrepair.xyz/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://rickneesrepair.com/contact</loc>
+    <loc>https://neesrepair.xyz/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
   
   <!-- Services SEO Pages -->
-  <url><loc>https://rickneesrepair.com/services/washer-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/dryer-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/refrigerator-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/freezer-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/dishwasher-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/oven-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/stove-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/range-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/cooktop-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/ice-maker-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/microwave-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/garbage-disposal-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/wine-cooler-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/air-conditioner-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/commercial-appliance-repair</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/services/emergency-appliance-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/washer-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/dryer-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/refrigerator-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/freezer-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/dishwasher-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/oven-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/stove-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/range-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/cooktop-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/ice-maker-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/microwave-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/garbage-disposal-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/wine-cooler-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/air-conditioner-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/commercial-appliance-repair</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/services/emergency-appliance-repair</loc><priority>0.90</priority></url>
 
   <!-- Cities SEO Pages -->
-  <url><loc>https://rickneesrepair.com/cities/wichita</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/derby</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/andover</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/bel-aire</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/park-city</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/maize</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/goddard</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/haysville</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/valley-center</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/augusta</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/mulvane</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/clearwater</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/rose-hill</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/kechi</loc><priority>0.90</priority></url>
-  <url><loc>https://rickneesrepair.com/cities/colwich</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/wichita</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/derby</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/andover</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/bel-aire</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/park-city</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/maize</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/goddard</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/haysville</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/valley-center</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/augusta</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/mulvane</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/clearwater</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/rose-hill</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/kechi</loc><priority>0.90</priority></url>
+  <url><loc>https://neesrepair.xyz/cities/colwich</loc><priority>0.90</priority></url>
 </urlset>
