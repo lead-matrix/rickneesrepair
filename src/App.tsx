@@ -36,13 +36,21 @@ import Settings from './pages/admin/Settings';
 // When no Supabase: pass through (local development mode)
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
+  const [timedOut, setTimedOut] = React.useState(false);
+
+  // Safety valve: if auth check hangs > 4s, redirect to login
+  React.useEffect(() => {
+    if (!loading) return;
+    const t = setTimeout(() => setTimedOut(true), 4000);
+    return () => clearTimeout(t);
+  }, [loading]);
 
   if (!supabase) {
     // Local mode — no auth required
     return <>{children}</>;
   }
 
-  if (loading) {
+  if (loading && !timedOut) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
@@ -50,7 +58,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
     );
   }
 
-  if (!user) {
+  if (!user || timedOut) {
     return <Navigate to="/admin/login" replace />;
   }
 
