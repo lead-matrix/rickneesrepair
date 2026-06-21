@@ -324,7 +324,8 @@ export const LeadDataProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     loadData();
 
     if (supabase) {
-      const channel = supabase
+      const client = supabase;
+      const channel = client
         .channel('schema-db-changes')
         .on(
           'postgres_changes',
@@ -336,7 +337,7 @@ export const LeadDataProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         .subscribe();
 
       return () => {
-        supabase.removeChannel(channel);
+        client.removeChannel(channel);
       };
     }
   }, []);
